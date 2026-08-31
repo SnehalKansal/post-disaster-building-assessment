@@ -1,0 +1,174 @@
+/* About Page Styles */
+.about-page-wrapper {
+  padding-bottom: 5rem;
+}
+
+.about-header-banner {
+  padding: 3rem 0;
+  background: linear-gradient(180deg, rgba(37, 99, 235, 0.05) 0%, transparent 100%);
+  border-bottom: 1px solid var(--light-border);
+  margin-bottom: 3rem;
+}
+
+.about-intro-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2.5rem;
+  margin-bottom: 3.5rem;
+  align-items: start;
+}
+
+.about-statement-card {
+  background: #ffffff;
+  border: 1px solid var(--light-border);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.about-h2 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--dark-navy);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.problem-box {
+  background: rgba(239, 68, 68, 0.05);
+  border-left: 4px solid #ef4444;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: 1.25rem;
+}
+
+.solution-box {
+  background: rgba(16, 185, 129, 0.05);
+  border-left: 4px solid #10b981;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: 1.25rem;
+}
+
+.about-box-title {
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.4rem;
+}
+
+/* Tech Stack Matrix */
+.tech-stack-section {
+  margin-bottom: 3.5rem;
+}
+
+.tech-stack-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.stack-card {
+  background: #ffffff;
+  border: 1px solid var(--light-border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.stack-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.stack-icon-box {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stack-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--dark-navy);
+}
+
+.stack-tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.stack-tag {
+  background: #f1f5f9;
+  color: var(--dark-navy);
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  border: 1px solid #e2e8f0;
+}
+
+/* System Architecture Diagram Flow */
+.architecture-section {
+  background: var(--dark-navy);
+  border: 1px solid var(--slate-border);
+  border-radius: var(--radius-xl);
+  padding: 3rem 2rem;
+  color: #ffffff;
+  margin-bottom: 3.5rem;
+  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.7);
+}
+
+.arch-flow-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.arch-node {
+  background: rgba(30, 41, 59, 0.9);
+  border: 1px solid rgba(59, 130, 246, 0.4);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1rem;
+  width: 170px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.arch-node-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.arch-node-sub {
+  font-size: 0.72rem;
+  color: #94a3b8;
+}
+
+@media (max-width: 1024px) {
+  .about-intro-grid,
+  .tech-stack-grid {
+    grid-template-columns: 1fr;
+  }
+  .arch-flow-flex {
+    justify-content: center;
+  }
+}

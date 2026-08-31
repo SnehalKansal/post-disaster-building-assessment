@@ -1,0 +1,89 @@
+/* ProbabilityBar Styles */
+.probability-card {
+  background: #ffffff;
+  border: 1px solid var(--light-border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.probability-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.probability-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--dark-navy);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.probability-rows-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.prob-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.prob-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+}
+
+.prob-tier-name {
+  font-weight: 600;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.prob-color-pill {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.prob-percentage-val {
+  font-weight: 700;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.prob-bar-track {
+  height: 10px;
+  background: #f1f5f9;
+  border-radius: 9999px;
+  overflow: hidden;
+  position: relative;
+}
+
+.prob-bar-fill {
+  height: 100%;
+  border-radius: 9999px;
+  transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.prob-highest-tag {
+  font-size: 0.68rem;
+  background: var(--dark-navy);
+  color: #ffffff;
+  padding: 0.1rem 0.45rem;
+  border-radius: 4px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-left: 0.4rem;
+}
