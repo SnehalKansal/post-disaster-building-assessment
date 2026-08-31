@@ -35,7 +35,7 @@ npm install
 npm run dev
 ```
 
-The application will be live at `http://localhost:5173` (or `http://localhost:5174`).
+The application will be live at `http://localhost:5174`.
 
 ---
 
