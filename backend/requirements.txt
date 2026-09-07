@@ -9,3 +9,7 @@ shapely
 pyproj
 python-multipart
 python-dotenv
+SQLAlchemy
+GeoAlchemy2
+psycopg2-binary
+pydantic-settings
