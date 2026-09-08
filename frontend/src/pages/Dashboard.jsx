@@ -1,0 +1,13 @@
+import { BarChart3, Layers3, MapPinned, RefreshCw } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { fetchAnalyticsData, fetchRiskZones } from '../services/api';
+import '../styles/dashboard.css';
+
+export default function Dashboard() {
+  const [zones, setZones] = useState([]); const [analytics, setAnalytics] = useState(null); const [isLoading, setIsLoading] = useState(true); const [error, setError] = useState(null);
+  async function loadWorkspace() { setIsLoading(true); setError(null); try { const [nextZones, nextAnalytics] = await Promise.all([fetchRiskZones(), fetchAnalyticsData()]); setZones(nextZones); setAnalytics(nextAnalytics); } catch (requestError) { setError(requestError.message); } finally { setIsLoading(false); } }
+  useEffect(() => { loadWorkspace(); }, []);
+  const kpis = analytics?.kpis ?? {};
+  return <div className="page workspace-page"><header className="workspace-header"><div><p className="eyebrow">Spatial workspace</p><h1>Assessment layers</h1><p>Building footprints, imagery coverage, and damage zones appear here after data is processed.</p></div><button className="button secondary" onClick={loadWorkspace} type="button"><RefreshCw size={16} /> Refresh</button></header>{error && <p className="notice error">{error}</p>}<section className="kpi-grid" aria-label="Assessment summary"><article><span>Total assessments</span><strong>{kpis.totalAnalyses ?? '—'}</strong></article><article><span>Damage cases</span><strong>{kpis.damageCasesDetected ?? '—'}</strong></article><article><span>Critical cases</span><strong>{kpis.criticalCases ?? '—'}</strong></article><article><span>Average confidence</span><strong>{kpis.averageConfidence ?? '—'}</strong></article></section><section className="workspace-canvas"><div className="workspace-toolbar"><span><MapPinned size={16} /> WGS 84 / EPSG:4326</span><span><Layers3 size={16} /> {zones.length} published zones</span></div>{isLoading && <p className="canvas-message">Loading spatial layers…</p>}{!isLoading && !error && zones.length === 0 && <div className="empty-map-state"><Layers3 size={28} /><h2>No spatial layers yet</h2><p>Ingest imagery and register building geometry to create a reviewable assessment layer.</p><Link className="button primary" to="/ingest">Ingest imagery</Link></div>}{!isLoading && !error && zones.length > 0 && <ul className="zone-list">{zones.map((zone) => <li key={zone.id}>{zone.name}</li>)}</ul>}</section>{!isLoading && !error && analytics?.recentAnalyses?.length === 0 && <section className="empty-analytics"><BarChart3 size={20} /><div><h2>No analysis metrics yet</h2><p>Metrics will appear after processed assessments are persisted by the backend.</p></div></section>}</div>;
+}

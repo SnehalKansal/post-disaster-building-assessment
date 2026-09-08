@@ -1,4 +1,3 @@
-from datetime import date
 from pathlib import Path
 from uuid import uuid4
 
@@ -30,48 +29,15 @@ def build_analysis_result(
     model_type: str,
     analysis_type: str,
 ) -> dict[str, object]:
-    analysis_id = f"DV-{date.today():%Y}-{uuid4().hex[:4].upper()}"
+    analysis_id = f"DV-{uuid4().hex[:8].upper()}"
     return {
         "id": analysis_id,
-        "name": file_name,
         "fileName": file_name,
-        "disasterType": "Post-Disaster Structural Reconnaissance",
-        "location": "Pending geospatial registration",
-        "date": date.today().isoformat(),
-        "fileSize": "Pending measurement",
-        "dimensions": "Pending image inspection",
-        "sensorType": "Uploaded imagery",
         "originalImage": image_url,
-        "overlayImage": image_url,
-        "damageLevel": "SEVERE_DAMAGE",
-        "confidenceScore": 96.8,
-        "analysisTime": "Integration response",
-        "probabilities": {
-            "noDamage": 1.2,
-            "minorDamage": 4.5,
-            "moderateDamage": 18.4,
-            "severeDamage": 71.1,
-            "destroyed": 4.8,
-        },
-        "aiExplanation": (
-            f"The {model_type} integration adapter received a {analysis_type} request. "
-            "This result will be replaced by the configured ML inference pipeline."
-        ),
-        "detectedIndicators": [
-            {
-                "text": "Integration response; ML indicators are not available yet",
-                "positive": False,
-                "severity": "low",
-            }
-        ],
-        "recommendations": [
-            {
-                "priority": "MEDIUM",
-                "text": "Perform a qualified on-site structural inspection before occupancy.",
-                "category": "Inspection",
-            }
-        ],
-        "heatmapData": [],
+        "status": "received",
+        "message": "Imagery has been stored. Geospatial processing and damage inference are not available yet.",
+        "modelType": model_type,
+        "analysisType": analysis_type,
     }
 
 

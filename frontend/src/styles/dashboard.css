@@ -1,0 +1,50 @@
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin: 28px 0;
+}
+
+.kpi-grid article {
+  display: grid;
+  gap: 8px;
+  padding: 16px;
+  border: 1px solid #d6e0d7;
+  background: #f8faf8;
+}
+
+.kpi-grid span {
+  color: #59665f;
+  font-size: .8rem;
+}
+
+.kpi-grid strong {
+  color: #183f33;
+  font-size: 1.45rem;
+}
+
+.empty-analytics {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 20px;
+  padding: 18px;
+  border-left: 3px solid #8ca899;
+  background: #eef4ef;
+}
+
+.empty-analytics h2 {
+  margin-bottom: 6px;
+  font-size: 1.1rem;
+}
+
+.empty-analytics p {
+  margin-bottom: 0;
+  color: #59665f;
+}
+
+@media (max-width: 700px) {
+  .kpi-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
