@@ -35,7 +35,17 @@ backend/static/uploads/*
 !backend/static/uploads/.gitkeep
 backend/static/heatmaps/*
 !backend/static/heatmaps/.gitkeep
+backend/static/overlays/*
+!backend/static/overlays/.gitkeep
+backend/static/geojson/*
+!backend/static/geojson/.gitkeep
 
 # Large satellite imagery
 *.tif
 *.tiff
+
+# Trained model weights (tens of MB - distribute via release/Drive, not git)
+ml/models/**/*.safetensors
+ml/models/**/*.pth
+ml/models/**/*.pt
+ml/models/**/*.bin

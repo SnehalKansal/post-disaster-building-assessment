@@ -14,5 +14,5 @@ function ScrollToTop() {
 }
 
 export default function App() {
-  return <BrowserRouter><ScrollToTop /><div className="application-shell"><Navbar /><main><Routes><Route path="/" element={<Home />} /><Route path="/ingest" element={<Upload />} /><Route path="/workspace" element={<Dashboard />} /><Route path="*" element={<Home />} /></Routes></main><Footer /></div></BrowserRouter>;
+  return <BrowserRouter><ScrollToTop /><div className="application-shell"><Navbar /><main><Routes><Route path="/" element={<Home />} /><Route path="/ingest" element={<Upload />} /><Route path="/workspace" element={<Dashboard />} /><Route path="/workspace/:disasterId" element={<Dashboard />} /><Route path="*" element={<Home />} /></Routes></main><Footer /></div></BrowserRouter>;
 }

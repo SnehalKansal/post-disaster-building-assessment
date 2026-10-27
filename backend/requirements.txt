@@ -1,15 +1,25 @@
+# Web framework
 fastapi
 uvicorn[standard]
-sqlalchemy
-psycopg2-binary
-geoalchemy2
-rasterio
-geopandas
-shapely
-pyproj
 python-multipart
-python-dotenv
-SQLAlchemy
-GeoAlchemy2
-psycopg2-binary
 pydantic-settings
+python-dotenv
+
+# Database
+SQLAlchemy
+psycopg2-binary
+GeoAlchemy2
+
+# Geospatial
+shapely
+rasterio
+pyproj
+
+# Machine learning (two-stage SegFormer-B0 + Siamese ResNet-18 pipeline)
+torch
+torchvision
+transformers
+safetensors
+opencv-python-headless
+numpy
+scipy
